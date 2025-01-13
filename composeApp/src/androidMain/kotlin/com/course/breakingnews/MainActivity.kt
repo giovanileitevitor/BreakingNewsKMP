@@ -3,7 +3,6 @@ package com.course.breakingnews
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 
@@ -17,15 +16,16 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Preview(showBackground = true)
 @Composable
-fun MessageCard(name: String) {
-    Text(text = "Hello $name!")
+fun DetailsScreenPreview() {
+    DetailsScreen()
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
-fun MessageCardPreview() {
-    MessageCard(name = "Lucas")
+fun ComponentsPreview() {
+    BreakingNewsTopBar(onClick = {})
 }
 
 @Preview

@@ -25,13 +25,27 @@ class DetailsViewModel: ViewModel() {
     private fun handleActions() = viewModelScope.launch {
         pendingActions.collect { action ->
             when (action) {
-                is DetailsAction.Idle -> {}
+                is DetailsAction.Idle -> requestIdleState()
+                is DetailsAction.RequestOnBackPressed -> requestOnBackPressed()
             }
+        }
+    }
+
+    private fun requestIdleState() {
+        viewModelScope.launch {
+            DetailsState.Idle.updateState()
+        }
+    }
+
+    private fun requestOnBackPressed() {
+        viewModelScope.launch {
+            DetailsState.OnBackPressed.updateState()
         }
     }
 
     fun submitAction(action: DetailsAction) {
         viewModelScope.launch {
+            pendingActions.emit(action)
         }
     }
 

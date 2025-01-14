@@ -2,6 +2,7 @@ package com.course.breakingnews.features.home.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.course.breakingnews.domain.usecase.GetHomeUseCase
 import com.course.breakingnews.features.details.state.DetailsState
 import com.course.breakingnews.features.home.action.HomeAction
 import com.course.breakingnews.features.home.state.HomeState
@@ -11,7 +12,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-class HomeViewModel: ViewModel() {
+class HomeViewModel(
+    private val getHomeUseCase: GetHomeUseCase
+): ViewModel() {
 
     private val pendingActions = MutableSharedFlow<HomeAction>()
 

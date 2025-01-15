@@ -1,4 +1,4 @@
-package com.course.breakingnews.data
+package com.course.breakingnews.data.repository
 
 import com.course.breakingnews.domain.repository.HomeRepository
 

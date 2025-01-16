@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -17,25 +18,25 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
-import breakingnews.composeapp.generated.resources.Res
-import breakingnews.composeapp.generated.resources.breaking_news_logo
-import org.jetbrains.compose.resources.painterResource
+import com.skydoves.landscapist.ImageOptions
+import com.skydoves.landscapist.coil3.CoilImage
 
 @Composable
 fun DetailsHeaderSection(
     modifier: Modifier = Modifier,
-    imagePainter: Painter = painterResource(Res.drawable.breaking_news_logo),
+    urlToImage: String,
     onClick: () -> Unit
 ) {
     Box {
-        Image(
-            painter = imagePainter,
-            contentDescription = null,
-            contentScale = ContentScale.Crop,
-            modifier = modifier.fillMaxWidth().height(250.dp)
+
+        CoilImage(
+            modifier = modifier.fillMaxWidth().height(250.dp),
+            imageModel = { urlToImage },
+            imageOptions = ImageOptions(
+                contentScale = ContentScale.Crop
+            )
         )
 
         Row(

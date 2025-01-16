@@ -30,8 +30,11 @@ fun HomeNavHost(
 
         composable<HomeRoutes.Home> {
             HomeScreen(
-                navigateToDetailsScreen = {
-                    navHostController.navigate(HomeRoutes.Details)
+                navigateToDetailsScreen = { urlToImage, description ->
+                    navHostController.navigate(HomeRoutes.Details(
+                        urlToImage = urlToImage,
+                        description = description
+                    ))
                 },
                 navigateToAboutScreen = {
                     navHostController.navigate(HomeRoutes.About)

@@ -42,9 +42,12 @@ fun ComponentsPreview() {
             title = "5 things to know about the 'conundrum' of lupus",
             author = "Matt Villano",
             date = "Sunday, 9 May 2021",
+            imageUrl = "",
             onClick = {}
         )
-        DetailsHeaderSection(onClick = {})
+        DetailsHeaderSection(
+            urlToImage = "",
+            onClick = {})
         DetailsContentSection(
             content = """
                     LONDON — Cryptocurrencies “have no intrinsic value” and people who invest in them should be prepared to lose all their money, Bank of England Governor Andrew Bailey said.

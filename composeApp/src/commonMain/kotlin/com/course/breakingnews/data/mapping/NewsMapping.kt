@@ -10,7 +10,7 @@ import com.course.breakingnews.domain.model.source.SourceDomain
 fun NewsRawResponse.toDomain() = NewsRawDomain(
     status = this.status,
     totalResults = this.totalResults,
-    newsDomains = this.newsResponses?.map { it?.toDomain() }
+    newsDomains = this.newsResponses?.map { it.toDomain() }
 )
 
 fun NewsResponse.toDomain() = NewsDomain(

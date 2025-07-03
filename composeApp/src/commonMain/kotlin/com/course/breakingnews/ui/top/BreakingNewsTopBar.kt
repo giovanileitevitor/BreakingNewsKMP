@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import breakingnews.composeapp.generated.resources.Res
 import breakingnews.composeapp.generated.resources.breaking_news_logo
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 
 @Composable
@@ -50,4 +51,12 @@ fun BreakingNewsTopBar(
             )
         }
     }
+}
+
+@Preview()
+@Composable
+private fun PreviewTopBar(){
+    BreakingNewsTopBar(
+        onClick = {}
+    )
 }

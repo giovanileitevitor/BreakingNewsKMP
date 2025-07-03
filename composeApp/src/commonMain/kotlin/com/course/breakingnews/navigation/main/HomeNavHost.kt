@@ -20,13 +20,13 @@ fun HomeNavHost(
         startDestination = HomeRoutes.Home,
         modifier = modifier
     ) {
-       composable<HomeRoutes.About> {
-           AboutScreen(
-               onBackPressed = {
-                   navHostController.popBackStack()
-               }
-           )
-       }
+        composable<HomeRoutes.About> {
+            AboutScreen(
+                onBackPressed = {
+                    navHostController.popBackStack()
+                }
+            )
+        }
 
         composable<HomeRoutes.Home> {
             HomeScreen(

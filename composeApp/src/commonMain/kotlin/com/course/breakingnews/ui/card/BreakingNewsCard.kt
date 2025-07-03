@@ -29,6 +29,7 @@ import breakingnews.composeapp.generated.resources.breaking_news_logo
 import com.skydoves.landscapist.ImageOptions
 import com.skydoves.landscapist.coil3.CoilImage
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 fun BreakingNewsCard(
@@ -97,4 +98,16 @@ fun BreakingNewsCard(
             }
         }
     }
+}
+
+@Preview
+@Composable
+private fun PreviewBreakingNewsCard(){
+    BreakingNewsCard(
+        title = "Title",
+        author = "Author",
+        date = "Date",
+        imageUrl = "",
+        onClick = {}
+    )
 }

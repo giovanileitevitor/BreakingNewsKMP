@@ -22,6 +22,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import com.skydoves.landscapist.ImageOptions
 import com.skydoves.landscapist.coil3.CoilImage
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 fun DetailsHeaderSection(
@@ -60,4 +61,13 @@ fun DetailsHeaderSection(
             }
         }
     }
+}
+
+@Preview
+@Composable
+private fun PreviewDetailsHeaderSection(){
+    DetailsHeaderSection(
+        urlToImage = "",
+        onClick = {}
+    )
 }

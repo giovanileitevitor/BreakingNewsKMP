@@ -9,6 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 fun Loading() {
@@ -19,4 +20,10 @@ fun Loading() {
             .padding(16.dp)
             .wrapContentWidth(Alignment.CenterHorizontally)
     )
+}
+
+@Preview()
+@Composable
+private fun PreviewLoading(){
+    Loading()
 }

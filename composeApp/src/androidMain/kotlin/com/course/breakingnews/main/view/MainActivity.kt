@@ -37,7 +37,10 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun ComponentsPreview() {
     Column {
-        BreakingNewsTopBar(onClick = {})
+        BreakingNewsTopBar(
+            onClickSettings = {},
+            onClickFavorites = {}
+        )
         BreakingNewsCard(
             title = "5 things to know about the 'conundrum' of lupus",
             author = "Matt Villano",

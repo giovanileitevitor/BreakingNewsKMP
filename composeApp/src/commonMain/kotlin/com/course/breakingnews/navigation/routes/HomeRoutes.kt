@@ -15,4 +15,9 @@ sealed interface HomeRoutes {
 
     @Serializable
     data object About: HomeRoutes
+
+    @Serializable
+    data object Favorites: HomeRoutes
+
+
 }

@@ -32,7 +32,8 @@ import org.koin.compose.viewmodel.koinViewModel
 @Composable
 fun HomeScreen(
     navigateToDetailsScreen: (String, String) -> Unit,
-    navigateToAboutScreen: () -> Unit
+    navigateToAboutScreen: () -> Unit,
+    navigateToFavoritesScreen: () -> Unit
 ) {
 
     val viewModel = koinViewModel<HomeViewModel>()
@@ -48,6 +49,7 @@ fun HomeScreen(
         state = state,
         navigateToDetailsScreen = navigateToDetailsScreen,
         navigateToAboutScreen = navigateToAboutScreen,
+        navigateToFavoritesScreen = navigateToFavoritesScreen,
         action = viewModel::submitAction
     )
 }
@@ -57,13 +59,17 @@ fun HomeContent(
     state: HomeState,
     action: (HomeAction) -> Unit,
     navigateToDetailsScreen: (String, String) -> Unit,
-    navigateToAboutScreen: () -> Unit
+    navigateToAboutScreen: () -> Unit,
+    navigateToFavoritesScreen: () -> Unit
 ) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         containerColor = Color.White,
         topBar = {
-            BreakingNewsTopBar(onClick = { navigateToAboutScreen.invoke() })
+            BreakingNewsTopBar(
+                onClickSettings = { navigateToAboutScreen.invoke() },
+                onClickFavorites = { navigateToFavoritesScreen.invoke() }
+            )
         },
         content = { paddingValues ->
             Column(
